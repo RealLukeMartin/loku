@@ -5,7 +5,7 @@
 ##### INSTALL
 To get rolling, run: `./loku`
 
-Installs kubernetes, kubectl, helm and deis.
+Installs kubernetes, kubectl, helm and minikube.
 
 ##### USAGE
 After install, run `minikube start` to spin up your local kubernetes cluster. 
