@@ -2,6 +2,8 @@
 
 set -e
 
+echo 'Make a sandwich, this may take a few'
+
 pre_install () {
   wget "$1" -O "$HOME/$2"
   tar zxvf "$HOME/$2" -C $HOME/

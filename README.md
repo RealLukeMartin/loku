@@ -3,7 +3,11 @@
 ### Quick local environment set-up for Kubernetes on OSX.
 
 ##### INSTALL
-To get rolling, run: `./loku`
+To get rolling, run:
+
+```
+bash <(curl -s curl -L https://raw.githubusercontent.com/RealLukeMartin/loku/master/loku)
+```
 
 Installs kubernetes, kubectl, helm and minikube.
 
