@@ -9,7 +9,7 @@ To get rolling, run:
 bash <(curl -s curl -L https://raw.githubusercontent.com/RealLukeMartin/loku/master/loku)
 ```
 
-Installs kubernetes, kubectl, helm and minikube.
+Installs docker, kubectl, helm and minikube.
 
 ##### USAGE
 After install, run `minikube start` to spin up your local kubernetes cluster. 

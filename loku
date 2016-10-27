@@ -16,7 +16,7 @@ command_exists () {
 if ! command_exists docker; then 
   echo 'installing docker...'
   brew install docker
-  brew install docker machine
+  brew install docker-machine
 fi
 
 if ! command_exists kubectl; then
