@@ -1,8 +1,8 @@
 # LoKu
 
-### Quick and easy local environment set-up for Kubernetes on OSX.
+##### Quick and easy local environment set-up for Kubernetes on OSX.
 
-##### INSTALL
+### INSTALL
 To get rolling, run:
 
 ```
@@ -11,13 +11,13 @@ wget https://raw.githubusercontent.com/poetic/loku/master/loku -O loku && chmod 
 
 Install loku dependencies with: `loku install`
 
-##### USAGE
+### USAGE
 
 To get your kubernetes cluster running: `loku start`
 
 After the cluster finishes building, go to your dashboard: `loku dashboard`
 
-Commands:
+#####Commands:
   
   Cluster Management:
 
