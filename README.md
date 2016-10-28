@@ -6,29 +6,42 @@
 To get rolling, run:
 
 ```
-bash <(curl -s curl -L https://raw.githubusercontent.com/poetic/loku/master/loku)
+wget https://raw.githubusercontent.com/poetic/loku/master/loku -O loku && chmod +x loku && mv loku /usr/local/bin/
 ```
 
-Installs and configures docker, kubectl, helm and minikube.
+Install loku dependencies with: `loku install`
 
 ##### USAGE
-After install, run `minikube start` to spin up your local kubernetes cluster. 
-Then run `minikube dashboard` to go to your kubernetes dashboard.
 
-To tear down your cluster run `minikube delete`.
+To get your kubernetes cluster running: `loku start`
 
-##### Dependencies
-* VirtualBox 5+
-* Homebrew
+After the cluster finishes building, go to your dashboard: `loku dashboard`
+
+Commands:
+  
+  Cluster Management:
+
+    install                   Install loku and dependencies
+    start                     Start kubernetes cluster
+    stop                      Stop kubernetes cluster
+    delete                    Delete kubernetes cluster
+    dashboard                 Open kubernetes dashboard
+
+  Apps:
+
+    drupal                    Install drupal on cluster
+    drupal_url [app_name]     Get drupal URL
+
 
 # Examples
 ### Drupal
-After installing and starting your minibox, you can quickly install a drupal site on your cluster. Just run:
+After installing and starting your cluster, you can quickly install a drupal site on it. Just run:
 
-```
-bash <(curl -s curl -L https://raw.githubusercontent.com/poetic/loku/master/examples/fast_drupal.sh)
-```
+`loku drupal`
 
+<<<<<<< HEAD
+Watch the logs in your dashboard as the drupal site builds, when the drupal pod is completed you can retrieve the url to the site with:
+=======
 After the script runs, go to your minikube dashboard and watch the logs on the drupal pod.
 When it is complete run these to get your drupal url, make sure to replace [APPNAME] with your app name is:
 ```
@@ -37,7 +50,8 @@ export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].
 ```
 export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
 ```
+>>>>>>> master
 
-```
-echo http://$NODE_IP:$NODE_PORT
-```
+`loku drupal_url [app_name]`
+
+The [app_name] will be the preceding words before "-drupal" on the drupal pod.
