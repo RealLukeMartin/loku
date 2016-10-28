@@ -1,1 +1,1 @@
-# Modified Drupal Helm Chartfor easy local kubernetes
+# Modified Drupal Helm Chart for easy local kubernetes
