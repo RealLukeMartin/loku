@@ -7,7 +7,7 @@ helm_version="v2.0.0-beta.2"
 minikube_version="v0.12.0"
 
 pre_install () {
-  wget "$1" -O "$HOME/$2"
+  wget -c "$1" -O "$HOME/$2"
   tar zxvf "$HOME/$2" -C $HOME/
 }
 
@@ -20,7 +20,7 @@ command_exists () {
   type "$1" &> /dev/null ;
 }
 
-echo 'Make a sandwich, this may take a few'
+echo 'Make a sandwich, this may take a few...'
 
 if ! command_exists docker; then
   echo 'installing docker...'
@@ -50,3 +50,5 @@ if ! command_exists minikube; then
   chmod +x minikube
   mv minikube /usr/local/bin/minikube
 fi
+
+echo 'Done.'
