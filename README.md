@@ -39,7 +39,18 @@ After installing and starting your cluster, you can quickly install a drupal sit
 
 `loku drupal`
 
+<<<<<<< HEAD
 Watch the logs in your dashboard as the drupal site builds, when the drupal pod is completed you can retrieve the url to the site with:
+=======
+After the script runs, go to your minikube dashboard and watch the logs on the drupal pod.
+When it is complete run these to get your drupal url, make sure to replace [APPNAME] with your app name is:
+```
+export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services [APPNAME]-drupal)
+```
+```
+export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
+```
+>>>>>>> master
 
 `loku drupal_url [app_name]`
 
