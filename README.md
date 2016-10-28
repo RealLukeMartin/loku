@@ -6,7 +6,7 @@
 To get rolling, run:
 
 ```
-wget https://raw.githubusercontent.com/poetic/loku/master/loku -O loku && chmod +x loku && mv loku /usr/bin/local/
+wget https://raw.githubusercontent.com/poetic/loku/master/loku -O loku && chmod +x loku && mv loku /usr/local/bin/
 ```
 
 Install loku dependencies with: `loku install`
