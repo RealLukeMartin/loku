@@ -107,7 +107,7 @@ function get_drupal_url {
 }
 
 
-if [ "$1" == "init" ]; then
+if [ "$1" == "install" ]; then
   build_dependencies
 elif [ "$1" == "start" ]; then
   minikube start
