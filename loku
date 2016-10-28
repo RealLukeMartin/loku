@@ -34,7 +34,7 @@ Commands:
   
   Cluster Management:
 
-    init                      Install loku and dependencies
+    install                   Install loku and dependencies
     start                     Start kubernetes cluster
     stop                      Stop kubernetes cluster
     delete                    Delete kubernetes cluster
