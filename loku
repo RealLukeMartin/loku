@@ -45,6 +45,8 @@ if ! command_exists helm; then
   if [[ ! -d $HOME/.helm ]]; then
     mkdir $HOME/.helm
     echo "Created helm home at ~/.helm..."
+    echo "Pulling latest helm charts"
+    git clone https://github.com/kubernetes/charts.git $HOME/.helm/charts
   fi
 fi
 
