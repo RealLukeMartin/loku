@@ -38,6 +38,10 @@ if ! command_exists helm; then
   echo 'installing helm...'
   pre_install http://storage.googleapis.com/kubernetes-helm/helm-${helm_version}-darwin-amd64.tar.gz helm-${helm_version}-darwin-amd64.tar.gz
   post_install darwin-amd64/helm
+  if [[ ! -d $HOME/.helm ]]; then
+    mkdir $HOME/.helm
+    echo "Created helm home at ~/.helm..."
+  fi
 fi
 
 if ! command_exists minikube; then
