@@ -10,4 +10,4 @@ if [[ ! -d $HOME/.loku/ ]]; then
 fi
 
 helm install $HOME/.loku/examples/drupal
-minikube ssh -- sudo -s && chmod -R 777 /tmp/hostpath_pv
+minikube ssh -- sudo chmod -R 777 /tmp/hostpath_pv
