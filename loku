@@ -11,6 +11,11 @@ pre_install () {
   tar zxvf "$HOME/$2" -C $HOME/
 }
 
+post_install () {
+  chmod +x "$HOME/$1"
+  cp "$HOME/$1" /usr/local/bin/
+}
+
 command_exists () {
   type "$1" &> /dev/null ;
 }
@@ -26,13 +31,13 @@ fi
 if ! command_exists kubectl; then
   echo 'installing kubectl...'
   pre_install https://github.com/kubernetes/kubernetes/releases/download/${kube_version}/kubernetes.tar.gz kubernetes.tar.gz 
-  cp $HOME/kubernetes/platforms/darwin/amd64/kubectl /usr/local/bin/kubectl
+  post_install kubernetes/platforms/darwin/amd64/kubectl
 fi
 
 if ! command_exists helm; then
   echo 'installing helm...'
   pre_install http://storage.googleapis.com/kubernetes-helm/helm-${helm_version}-darwin-amd64.tar.gz helm-${helm_version}-darwin-amd64.tar.gz
-  cp $HOME/darwin-amd64/helm /usr/local/bin/helm
+  post_install cp darwin-amd64/helm
 fi
 
 if ! command_exists minikube; then
