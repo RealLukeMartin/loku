@@ -2,7 +2,9 @@
 
 set -e
 
-echo 'Make a sandwich, this may take a few'
+kube_version="v1.4.4"
+helm_version="v2.0.0-beta.2"
+minikube_version="v0.12.0"
 
 pre_install () {
   wget "$1" -O "$HOME/$2"
@@ -13,7 +15,9 @@ command_exists () {
   type "$1" &> /dev/null ;
 }
 
-if ! command_exists docker; then 
+echo 'Make a sandwich, this may take a few'
+
+if ! command_exists docker; then
   echo 'installing docker...'
   brew install docker
   brew install docker-machine
@@ -21,19 +25,19 @@ fi
 
 if ! command_exists kubectl; then
   echo 'installing kubectl...'
-  pre_install https://github.com/kubernetes/kubernetes/releases/download/v1.4.4/kubernetes.tar.gz kubernetes.tar.gz 
+  pre_install https://github.com/kubernetes/kubernetes/releases/download/${kube_version}/kubernetes.tar.gz kubernetes.tar.gz 
   cp $HOME/kubernetes/platforms/darwin/amd64/kubectl /usr/local/bin/kubectl
 fi
 
 if ! command_exists helm; then
   echo 'installing helm...'
-  pre_install http://storage.googleapis.com/kubernetes-helm/helm-v2.0.0-beta.2-darwin-amd64.tar.gz helm-v2.0.0-beta.2-darwin-amd64.tar.gz
+  pre_install http://storage.googleapis.com/kubernetes-helm/helm-${helm_version}-darwin-amd64.tar.gz helm-${helm_version}-darwin-amd64.tar.gz
   cp $HOME/darwin-amd64/helm /usr/local/bin/helm
 fi
 
 if ! command_exists minikube; then
   echo 'installing minikube...'
-  wget https://storage.googleapis.com/minikube/releases/v0.12.0/minikube-darwin-amd64 -O minikube
+  wget https://storage.googleapis.com/minikube/releases/${minikube_version}/minikube-darwin-amd64 -O minikube
   chmod +x minikube
   mv minikube /usr/local/bin/minikube
 fi
