@@ -116,6 +116,7 @@ elif [ "$1" == "stop" ]; then
 elif [ "$1" == "delete" ]; then
   minikube delete
 elif [ "$1" == "dashboard" ]; then
+  echo "Waiting, endpoint for service is not ready yet... (May take few minutes)"
   minikube dashboard
 elif [ "$1" == "drupal" ]; then
   build_drupal
