@@ -16,3 +16,7 @@ After install, run `minikube start` to spin up your local kubernetes cluster.
 Then run `minikube dashboard` to go to your kubernetes dashboard.
 
 To tear down your cluster run `minikube delete`.
+
+##### Dependencies
+* VirtualBox 5+
+* Homebrew
