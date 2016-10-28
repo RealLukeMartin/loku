@@ -2,16 +2,14 @@
 
 ### Quick and easy local environment set-up for Kubernetes on OSX.
 
-#### Dependencies
-* VirtualBox 5+
-* Homebrew
-
 ##### INSTALL
 To get rolling, run:
 
 ```
-wget https://raw.githubusercontent.com/poetic/loku/master/loku -O /usr/local/bin/loku && loku install
+wget https://raw.githubusercontent.com/poetic/loku/master/loku -O loku && chmod +x loku && mv loku /usr/bin/local/
 ```
+
+Install loku dependencies with: `loku install`
 
 ##### USAGE
 
