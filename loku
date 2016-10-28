@@ -6,6 +6,10 @@ kube_version="v1.4.4"
 helm_version="v2.0.0-beta.2"
 minikube_version="v0.12.0"
 
+kube_link="https://github.com/kubernetes/kubernetes/releases/download/${kube_version}/kubernetes.tar.gz"
+helm_link="http://storage.googleapis.com/kubernetes-helm/helm-${helm_version}-darwin-amd64.tar.gz"
+minikube_link="https://storage.googleapis.com/minikube/releases/${minikube_version}/minikube-darwin-amd64"
+
 pre_install () {
   wget -c "$1" -O "$HOME/$2"
   tar zxvf "$HOME/$2" -C $HOME/
@@ -30,13 +34,13 @@ fi
 
 if ! command_exists kubectl; then
   echo 'installing kubectl...'
-  pre_install https://github.com/kubernetes/kubernetes/releases/download/${kube_version}/kubernetes.tar.gz kubernetes.tar.gz 
+  pre_install ${kube_link} kubernetes.tar.gz 
   post_install kubernetes/platforms/darwin/amd64/kubectl
 fi
 
 if ! command_exists helm; then
   echo 'installing helm...'
-  pre_install http://storage.googleapis.com/kubernetes-helm/helm-${helm_version}-darwin-amd64.tar.gz helm-${helm_version}-darwin-amd64.tar.gz
+  pre_install  ${helm_link} helm-${helm_version}-darwin-amd64.tar.gz
   post_install darwin-amd64/helm
   if [[ ! -d $HOME/.helm ]]; then
     mkdir $HOME/.helm
@@ -46,7 +50,7 @@ fi
 
 if ! command_exists minikube; then
   echo 'installing minikube...'
-  wget https://storage.googleapis.com/minikube/releases/${minikube_version}/minikube-darwin-amd64 -O minikube
+  wget ${minikube_link} -O minikube
   chmod +x minikube
   mv minikube /usr/local/bin/minikube
 fi
