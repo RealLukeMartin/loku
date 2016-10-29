@@ -4,7 +4,7 @@ set -e
 
 kube_version="v1.4.4"
 helm_version="v2.0.0-beta.2"
-minikube_version="v0.12.0"
+minikube_version="v0.12.1"
 
 kube_link="https://github.com/kubernetes/kubernetes/releases/download/${kube_version}/kubernetes.tar.gz"
 helm_link="http://storage.googleapis.com/kubernetes-helm/helm-${helm_version}-darwin-amd64.tar.gz"
