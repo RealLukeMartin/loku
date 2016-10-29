@@ -38,7 +38,6 @@ Commands:
     start                     Start kubernetes cluster
     stop                      Stop kubernetes cluster
     delete                    Delete kubernetes cluster
-    dashboard                 Open kubernetes dashboard
 
   Apps:
 
@@ -115,9 +114,6 @@ elif [ "$1" == "stop" ]; then
   minikube stop
 elif [ "$1" == "delete" ]; then
   minikube delete
-elif [ "$1" == "dashboard" ]; then
-  echo "Waiting, endpoint for service is not ready yet... (May take few minutes)"
-  minikube dashboard
 elif [ "$1" == "drupal" ]; then
   build_drupal
 elif [ "$1" == "drupal_url" ]; then

@@ -15,7 +15,6 @@ Install loku dependencies with: `loku install`
 
 To get your kubernetes cluster running: `loku start`
 
-After the cluster finishes building, go to your dashboard: `loku dashboard`
 
 #####Commands:
   
@@ -25,7 +24,6 @@ After the cluster finishes building, go to your dashboard: `loku dashboard`
     start                     Start kubernetes cluster
     stop                      Stop kubernetes cluster
     delete                    Delete kubernetes cluster
-    dashboard                 Open kubernetes dashboard
 
   Apps:
 
