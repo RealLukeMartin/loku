@@ -15,6 +15,7 @@ Install loku dependencies with: `loku install`
 
 To get your kubernetes cluster running: `loku start`
 
+After loku starts run `loku dashboard` to open your kubernetes dashboard
 
 #####Commands:
   
@@ -23,6 +24,7 @@ To get your kubernetes cluster running: `loku start`
     install                   Install loku and dependencies
     start                     Start kubernetes cluster
     stop                      Stop kubernetes cluster
+    dashboard                 Open kubernetes dashboard
     destroy                   Destroy and remove kubernetes cluster
 
   Apps:
