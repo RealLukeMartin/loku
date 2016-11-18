@@ -37,6 +37,7 @@ Commands:
     install                   Install loku and dependencies
     start                     Start kubernetes cluster
     stop                      Stop kubernetes cluster
+    dashboard                 Open kubernetes dashboard
     delete                    Delete kubernetes cluster
 
   Apps:
@@ -116,6 +117,9 @@ elif [ "$1" == "delete" ]; then
   minikube delete
 elif [ "$1" == "drupal" ]; then
   build_drupal
+elif [ "$1" == "dashboard" ]; then		
+  echo "Waiting, endpoint for service is not ready yet... (May take few minutes)"		
+  minikube dashboard
 elif [ "$1" == "drupal_url" ]; then
   get_drupal_url $2
 else
