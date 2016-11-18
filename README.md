@@ -23,12 +23,13 @@ To get your kubernetes cluster running: `loku start`
     install                   Install loku and dependencies
     start                     Start kubernetes cluster
     stop                      Stop kubernetes cluster
-    delete                    Delete kubernetes cluster
+    destroy                   Destroy and remove kubernetes cluster
 
   Apps:
 
     drupal                    Install drupal on cluster
-    drupal_url [app_name]     Get drupal URL
+    url [app_name]            Get App URL
+    delete [app_name]         Delete App
 
 
 # Examples
@@ -39,6 +40,6 @@ After installing and starting your cluster, you can quickly install a drupal sit
 
 Watch the logs in your dashboard as the drupal site builds, when the drupal pod is completed you can retrieve the url to the site with:
 
-`loku drupal_url [app_name]`
+`loku url [app_name]`
 
 The [app_name] will be the preceding words before "-drupal" on the drupal pod.
