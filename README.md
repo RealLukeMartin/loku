@@ -47,4 +47,4 @@ Watch the logs in your dashboard as the drupal site builds, when the drupal pod 
 The [app_name] will be the preceding words before "-drupal" on the drupal pod.
 
 # Still in Active Development
-If you have any problem please post an issue.
+If you have any problem please create an issue.
