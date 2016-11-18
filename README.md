@@ -47,4 +47,4 @@ Watch the logs in your dashboard as the drupal site builds, when the drupal pod 
 The [app_name] will be the preceding words before "-drupal" on the drupal pod.
 
 # Still in Active Development
-There are some quirks that you might hit the first time you install an app, after your first time it runs smooth. The main thing you could see is helm won't find an open Tiller Pod on your first run at `loku drupal`, run `loku drupal` again it will work.
+If you have any problem please post an issue.
