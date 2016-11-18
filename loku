@@ -91,7 +91,11 @@ function build_drupal {
   if [[ ! -d $HOME/.loku/ ]]; then
     git clone git@github.com:poetic/loku.git $HOME/.loku
   fi
-
+  for i in {1..5}
+  do
+    sleep 1s
+    echo '.'
+  done
   helm install $HOME/.loku/examples/drupal
   minikube ssh -- sudo chmod -R 777 /tmp/hostpath_pv
 }
