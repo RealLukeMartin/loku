@@ -38,12 +38,13 @@ Commands:
     start                     Start kubernetes cluster
     stop                      Stop kubernetes cluster
     dashboard                 Open kubernetes dashboard
-    delete                    Delete kubernetes cluster
+    destroy                   Destroy and remove kubernetes cluster
 
   Apps:
 
     drupal                    Install drupal on cluster
-    drupal_url [app_name]     Get drupal URL
+    url [app_name]            Get App URL
+    delete [app_name]         Delete App
 
 EOF
 }
@@ -100,13 +101,22 @@ function build_drupal {
   minikube ssh -- sudo chmod -R 777 /tmp/hostpath_pv
 }
 
-function get_drupal_url {
+function get_url {
   if [ -z "$1" ]; then
-    "ERROR: Please provide the App Name"
+    "ERROR: Please provide the App Name you want the URL for"
   else
     export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services $1-drupal)
     export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
     echo http://$NODE_IP:$NODE_PORT
+  fi
+}
+
+function delete_app {
+  if [ -z "$1" ]; then
+    "ERROR: Please provide the App Name that you want to delete"
+  else
+    echo "deleting $1"
+    helm delete $1
   fi
 }
 
@@ -117,15 +127,17 @@ elif [ "$1" == "start" ]; then
   minikube start
 elif [ "$1" == "stop" ]; then
   minikube stop
-elif [ "$1" == "delete" ]; then
+elif [ "$1" == "destroy" ]; then
   minikube delete
 elif [ "$1" == "drupal" ]; then
   build_drupal
 elif [ "$1" == "dashboard" ]; then		
   echo "Waiting, endpoint for service is not ready yet... (May take few minutes)"		
   minikube dashboard
-elif [ "$1" == "drupal_url" ]; then
-  get_drupal_url $2
+elif [ "$1" == "url" ]; then
+  get_url $2
+elif [ "$1" == "delete" ]; then
+  delete_app $2
 else
   print_usage
 fi
