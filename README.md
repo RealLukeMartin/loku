@@ -30,8 +30,9 @@ After loku starts run `loku dashboard` to open your kubernetes dashboard
   Apps:
 
     drupal                    Install drupal on cluster
-    url [app_name]            Get App URL
-    delete [app_name]         Delete App
+    url [app-name-type]       Get App URL, ex: loku url app-name-drupal
+    delete [app-name]         Delete App, ex: loku delete app-name
+
 
 
 # Examples
@@ -42,9 +43,9 @@ After installing and starting your cluster, you can quickly install a drupal sit
 
 Watch the logs in your dashboard as the drupal site builds, when the drupal pod is completed you can retrieve the url to the site with:
 
-`loku url [app_name]`
+`loku url [app_name-type]`
 
-The [app_name] will be the preceding words before "-drupal" on the drupal pod.
+The app_name portion will be the app name assigned to it, the type will be the kind of service that the app is. For example a drupal app named green-cat would use `loku url green-cat-drupal`
 
 # Still in Active Development
 If you have any problem please [create an issue](https://github.com/poetic/loku/issues/new).

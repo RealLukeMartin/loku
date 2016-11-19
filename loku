@@ -42,8 +42,9 @@ Commands:
 
   Apps:
 
-    drupal                    Install drupal on cluster
-    url [app_name]            Get App URL
+    drupal                    Install drupal app
+    jenkins                   Install jenkins app
+    url [app-name-type]       Get App URL, ex: loku url app-name-drupal
     delete [app_name]         Delete App
 
 EOF
@@ -101,11 +102,27 @@ function build_drupal {
   minikube ssh -- sudo chmod -R 777 /tmp/hostpath_pv
 }
 
+function build_jenkins {
+  eval $(minikube docker-env)
+  helm init
+
+  if [[ ! -d $HOME/.loku/ ]]; then
+    git clone git@github.com:poetic/loku.git $HOME/.loku
+  fi
+  for i in {1..5}
+  do
+    sleep 1s
+    echo '.'
+  done
+  helm install $HOME/.loku/examples/jenkins
+  minikube ssh -- sudo chmod -R 777 /tmp/hostpath_pv
+}
+
 function get_url {
   if [ -z "$1" ]; then
     "ERROR: Please provide the App Name you want the URL for"
   else
-    export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services $1-drupal)
+    export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services $1)
     export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
     echo http://$NODE_IP:$NODE_PORT
   fi
@@ -131,6 +148,8 @@ elif [ "$1" == "destroy" ]; then
   minikube delete
 elif [ "$1" == "drupal" ]; then
   build_drupal
+elif [ "$1" == "jenkins" ]; then
+  build_jenkins
 elif [ "$1" == "dashboard" ]; then		
   echo "Waiting, endpoint for service is not ready yet... (May take few minutes)"		
   minikube dashboard
