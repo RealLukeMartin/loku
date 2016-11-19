@@ -47,5 +47,9 @@ Watch the logs in your dashboard as the drupal site builds, when the drupal pod 
 
 The app_name portion will be the app name assigned to it, the type will be the kind of service that the app is. For example a drupal app named green-cat would use `loku url green-cat-drupal`
 
+### Jenkins
+
+Quickly install Jenkins with 'loku jenkins'. After the app is initialized there will be instructions in the output to get the admin password.
+
 # Still in Active Development
 If you have any problem please [create an issue](https://github.com/poetic/loku/issues/new).
