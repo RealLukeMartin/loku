@@ -30,6 +30,7 @@ After loku starts run `loku dashboard` to open your kubernetes dashboard
   Apps:
 
     drupal                    Install drupal on cluster
+    jenkins                   Install jenkins app
     url [app-name-type]       Get App URL, ex: loku url app-name-drupal
     delete [app-name]         Delete App, ex: loku delete app-name
 
