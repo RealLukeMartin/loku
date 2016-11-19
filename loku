@@ -24,6 +24,20 @@ command_exists () {
   type "$1" &> /dev/null ;
 }
 
+init_check () {
+  eval $(minikube docker-env)
+  helm init
+
+  if [[ ! -d $HOME/.loku/ ]]; then
+    git clone git@github.com:poetic/loku.git $HOME/.loku
+  fi
+  for i in {1..5}
+  do
+    sleep 1s
+    echo '.'
+  done
+}
+
 function print_usage {
   cat << EOF
 loku is a management tool for local development with kubernetes
@@ -87,33 +101,13 @@ function build_dependencies {
 }
 
 function build_drupal {
-  eval $(minikube docker-env)
-  helm init
-
-  if [[ ! -d $HOME/.loku/ ]]; then
-    git clone git@github.com:poetic/loku.git $HOME/.loku
-  fi
-  for i in {1..5}
-  do
-    sleep 1s
-    echo '.'
-  done
+  init_check
   helm install $HOME/.loku/examples/drupal
   minikube ssh -- sudo chmod -R 777 /tmp/hostpath_pv
 }
 
 function build_jenkins {
-  eval $(minikube docker-env)
-  helm init
-
-  if [[ ! -d $HOME/.loku/ ]]; then
-    git clone git@github.com:poetic/loku.git $HOME/.loku
-  fi
-  for i in {1..5}
-  do
-    sleep 1s
-    echo '.'
-  done
+  init_check
   helm install $HOME/.loku/examples/jenkins
   minikube ssh -- sudo chmod -R 777 /tmp/hostpath_pv
 }
