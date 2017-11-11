@@ -17,7 +17,7 @@ To get your kubernetes cluster running: `loku start`
 
 After loku starts run `loku dashboard` to open your kubernetes dashboard
 
-#####Commands:
+##### Commands:
   
   Cluster Management:
 
