@@ -51,6 +51,3 @@ The app_name portion will be the app name assigned to it, the type will be the k
 ### Jenkins
 
 Quickly install Jenkins with 'loku jenkins'. After the app is initialized there will be instructions in the output to get the admin password.
-
-# Still in Active Development
-If you have any problem please [create an issue](https://github.com/poetic/loku/issues/new).
