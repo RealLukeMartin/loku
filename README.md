@@ -15,18 +15,18 @@
 wget https://raw.githubusercontent.com/poetic/loku/master/loku -O loku && chmod +x loku && mv loku /usr/local/bin/
 ```
 
-### After that run: `loku install`
-That will pull down the loku dependencies automagic...
+##### After that run: `loku install`
+That will pull down the loku dependencies automagic... 
 
-### Next run `loku start` and soon after run `loku dashboard`, which will pull up your dashbaord.
+You are now ready for Usage :star:
 
-After all that you're ready to rock.
+--------
 
 ### USAGE
 
-To get your kubernetes cluster running: `loku start`
+##### Next run `loku start` and soon after run `loku dashboard`, which will pull up your dashbaord.
 
-After loku starts run `loku dashboard` to open your kubernetes dashboard
+After all that you're ready to rock.
 
 ##### Commands:
   
