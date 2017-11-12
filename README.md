@@ -2,7 +2,7 @@
 
 ##### Quick and easy local environment set-up for Kubernetes on OSX.
 
-### INSTALL
+### :tada: INSTALL :tada:
 
 ##### Dependencies:
 * [Homebrew](https://brew.sh/)
