@@ -17,15 +17,12 @@ wget https://raw.githubusercontent.com/poetic/loku/master/loku -O loku && chmod 
 
 ##### After that run: `loku install`
 That will pull down the loku dependencies automagic... 
-
-You are now ready for 
-### :star: Usage :star:
-
 --------
+##### Congratulations! You are now ready for...
+# :star: Usage :star:
 
-### USAGE
-
-##### Next run `loku start` and soon after run `loku dashboard`, which will pull up your dashbaord.
+##### USAGE will show you the basics of using your new loku tool and cluster
+### First run `loku start` and soon after run `loku dashboard`, which will pull up your dashbaord.
 
 After all that you're ready to rock.
 
