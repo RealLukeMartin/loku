@@ -10,12 +10,17 @@
 
 #### Once you have installed and set up the dependencies listed above you are ready to get rolling.
 
-### So no run:
+### So now run:
 ```
 wget https://raw.githubusercontent.com/poetic/loku/master/loku -O loku && chmod +x loku && mv loku /usr/local/bin/
 ```
 
-Install loku dependencies with: `loku install`
+### After that run: `loku install`
+That will pull down the loku dependencies automagic...
+
+### Next run `loku start` and soon after run `loku dashboard`, which will pull up your dashbaord.
+
+After all that you're ready to rock.
 
 ### USAGE
 
