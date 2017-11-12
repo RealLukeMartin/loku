@@ -10,13 +10,13 @@
 
 ###### Once you have installed, and set up the dependencies listed above, you are ready to get rolling.
 
-### So now run:
+##### So now run:
 ```
 wget https://raw.githubusercontent.com/poetic/loku/master/loku -O loku && chmod +x loku && mv loku /usr/local/bin/
 ```
 
 ##### After that run: `loku install`
-That will pull down the loku dependencies automagic... 
+
 --------
 ##### Congratulations! You are now ready for...
 # :star: Usage :star:
