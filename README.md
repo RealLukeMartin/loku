@@ -22,8 +22,8 @@ That will pull down the loku dependencies automagic...
 # :star: Usage :star:
 
 ##### USAGE will show you the basics of using your new loku tool and cluster
-### * First run `loku start`, that will initiate,configure, and build your kubernetes cluster real quick. 
-### *`Next run loku dashboard`, which will pull up your dashboard. There's so much goodness in and around the dashboard I don't want to spoil your journey going trough all that.
+* First run `loku start`, that will initiate,configure, and build your kubernetes cluster real quick. 
+*`Next run loku dashboard`, which will pull up your dashboard. There's so much goodness in and around the dashboard I don't want to spoil your journey going trough all that.
 
 
 
