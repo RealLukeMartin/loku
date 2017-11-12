@@ -18,7 +18,8 @@ wget https://raw.githubusercontent.com/poetic/loku/master/loku -O loku && chmod 
 ##### After that run: `loku install`
 That will pull down the loku dependencies automagic... 
 
-You are now ready for Usage :star:
+You are now ready for 
+### :star: Usage :star:
 
 --------
 
