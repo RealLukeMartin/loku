@@ -8,7 +8,9 @@
 * [Homebrew](https://brew.sh/)
 * [VirtualBox](http://download.virtualbox.org/virtualbox/5.2.0/VirtualBox-5.2.0-118431-OSX.dmg)
 
-#### To get rolling, run:
+#### Once you have installed and set up the dependencies listed above you are ready to get rolling.
+
+### So no run:
 ```
 wget https://raw.githubusercontent.com/poetic/loku/master/loku -O loku && chmod +x loku && mv loku /usr/local/bin/
 ```
