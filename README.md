@@ -8,7 +8,7 @@
 * [Homebrew](https://brew.sh/)
 * [VirtualBox](http://download.virtualbox.org/virtualbox/5.2.0/VirtualBox-5.2.0-118431-OSX.dmg)
 
-#### Once you have installed and set up the dependencies listed above you are ready to get rolling.
+###### Once you have installed, and set up the dependencies listed above, you are ready to get rolling.
 
 ### So now run:
 ```
